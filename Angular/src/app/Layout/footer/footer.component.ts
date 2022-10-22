@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl, ReactiveFormsModule } from '@angular/forms';
+import { debounceTime } from 'rxjs';
 
 @Component({
   selector: 'app-footer',
@@ -7,9 +9,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FooterComponent implements OnInit {
 
-  constructor() { }
+  emailCtrl = new FormControl('', []);
+
+  constructor() {
+
+    this.emailCtrl.valueChanges.pipe(debounceTime(500)).subscribe(value => {console.log(value);});
+
+   }
 
   ngOnInit() {
   }
+
+  getEmail(event: Event) {
+    event.preventDefault();
+    console.log(this.emailCtrl.value);
+  }
+
 
 }

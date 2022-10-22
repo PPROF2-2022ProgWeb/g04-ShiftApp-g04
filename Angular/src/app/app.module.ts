@@ -7,6 +7,9 @@ import { FooterComponent } from './Layout/footer/footer.component';
 import { PagesComponent } from './Pages/Pages.component';
 import { ServiciosComponent } from './Servicios/Servicios.component';
 import { AppRoutingModule } from './app-routing.module';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { IngresarComponent } from './Pages/ingresar/ingresar.component';
+
 @NgModule({
   declarations: [			
     AppComponent,
@@ -14,11 +17,15 @@ import { AppRoutingModule } from './app-routing.module';
       NavbarComponent,
       FooterComponent,
       PagesComponent,
-      ServiciosComponent
+      ServiciosComponent,
+      IngresarComponent
    ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

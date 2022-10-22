@@ -20,10 +20,11 @@
             ">
           <div class="card-body p-5 shadow-5 text-center">
             <h2 class="fw-bold mb-5">Iniciar sesión</h2>
+            <!-- FORMULARIO-->
             <form>              
               <!-- Mail  -->
               <div class="form-outline mb-4">
-                <input type="email" id="form3Example3" class="form-control" />
+                <input type="email" id="form3Example3" class="form-control" [formControl]="emailCtrl"/>
                 <label class="form-label" for="form3Example3">Igrese su dirección de mail</label>
               </div>
 
