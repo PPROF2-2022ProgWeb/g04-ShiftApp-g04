@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, ReactiveFormsModule } from '@angular/forms';
+import { FormControl, ReactiveFormsModule, Validators } from '@angular/forms';
 import { debounceTime } from 'rxjs';
 
 @Component({
@@ -9,7 +9,7 @@ import { debounceTime } from 'rxjs';
 })
 export class FooterComponent implements OnInit {
 
-  emailCtrl = new FormControl('', []);
+  emailCtrl = new FormControl('', [Validators.required ]);
 
   constructor() {
 
