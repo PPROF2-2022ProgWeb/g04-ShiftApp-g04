@@ -25,16 +25,19 @@
               <!-- Mail  -->
               <div class="form-outline mb-4">
                 <input type="email" id="form3Example3" class="form-control" [formControl]="emailCtrl"/>
-                <label class="form-label" for="form3Example3">Igrese su dirección de mail</label>
+                <label class="form-label" for="form3Example3">Igrese su dirección de mail</label><br>
+                <span *ngIf="emailCtrl.hasError('required') && emailCtrl.dirty" class="text-danger">Este campo es requerido</span>
               </div>
 
               <!-- Contraseña  -->
               <div class="form-outline mb-4">
-                <input type="password" id="form3Example4" class="form-control" />
-                <label class="form-label" for="form3Example4">Ingrese su contraseña</label>
+                 
+                <input type="password" id="form3Example4" class="form-control" [formControl]="passCtrl" />
+                <label class="form-label" for="form3Example4">Ingrese su contraseña</label><br>
+                <span *ngIf="passCtrl.hasError('required') && passCtrl.dirty" class="text-danger">Este campo es requerido</span>             
               </div>
               <!-- Boton -->
-              <button type="submit" class="btn btn-primary btn-block mb-4">
+              <button [disabled]="checkPass()"  (click)="getEmail($event)" type="submit" class="btn btn-primary btn-block mb-4 ">
                 Ingresar
               </button>
               <!-- Registrase  -->

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, ReactiveFormsModule } from '@angular/forms';
+import { FormControl, ReactiveFormsModule, Validators } from '@angular/forms';
+import { debounceTime } from 'rxjs';
 
 
 @Component({
@@ -9,11 +10,33 @@ import { FormControl, ReactiveFormsModule } from '@angular/forms';
 })
 export class IngresarComponent implements OnInit {
 
-  emailCtrl = new FormControl('', [])
+  emailCtrl = new FormControl('', [Validators.required ]);
+  passCtrl = new FormControl('' , [Validators.required]);
 
-  constructor() { }
+  constructor() {
+
+    this.emailCtrl.valueChanges.pipe(debounceTime(500)).subscribe(value => {console.log(value);});
+    this.passCtrl.valueChanges.pipe(debounceTime(500)).subscribe(value => {console.log(value);});
+
+   }
 
   ngOnInit() {
+  }
+
+  getEmail(event: Event) {
+    event.preventDefault();
+    console.log(this.emailCtrl.value);
+  }
+
+  getPass(event: Event){
+    event.preventDefault();
+    console.log(this.passCtrl.value);
+  }
+
+  checkPass(): boolean{
+    let estado = !(this.emailCtrl.disabled && this.passCtrl.disabled);
+    console.log(estado);
+    return estado;
   }
 
 }
