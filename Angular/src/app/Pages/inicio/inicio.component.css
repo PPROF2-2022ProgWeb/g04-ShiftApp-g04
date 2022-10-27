@@ -1,0 +1,39 @@
+body{
+    font-family: 'Open Sans', sans-serif;
+}
+ .contenedor{
+     width: 90%;
+     max-width: 1200px;
+     overflow: hidden;
+     margin: auto;
+     padding: 60px 0;
+ }
+ header{
+    height: 80vh;
+    
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+}
+.head{
+    padding: 0;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    
+}
+.titulo{
+   font-size: 100px;
+   margin-bottom: 15px;
+}
+.subtitulo{
+   font-weight: 300;
+   font-size: 25px;
+}
+p {
+    margin-top: 0;
+    margin-bottom: 1rem;
+  }
