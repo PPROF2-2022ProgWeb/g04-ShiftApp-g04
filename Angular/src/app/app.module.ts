@@ -7,8 +7,9 @@ import { FooterComponent } from './Layout/footer/footer.component';
 import { PagesComponent } from './Pages/Pages.component';
 import { ServiciosComponent } from './Servicios/Servicios.component';
 import { AppRoutingModule } from './app-routing.module';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormBuilder, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { IngresarComponent } from './Pages/ingresar/ingresar.component';
+import { RegistrarseComponent } from './Pages/registrarse/registrarse.component';
 
 @NgModule({
   declarations: [			
@@ -18,7 +19,8 @@ import { IngresarComponent } from './Pages/ingresar/ingresar.component';
       FooterComponent,
       PagesComponent,
       ServiciosComponent,
-      IngresarComponent
+      IngresarComponent,
+      RegistrarseComponent
    ],
   imports: [
     BrowserModule,
