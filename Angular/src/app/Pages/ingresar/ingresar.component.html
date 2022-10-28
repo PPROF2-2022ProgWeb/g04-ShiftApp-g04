@@ -21,23 +21,35 @@
           <div class="card-body p-5 shadow-5 text-center">
             <h2 class="fw-bold mb-5">Iniciar sesión</h2>
             <!-- FORMULARIO-->
-            <form>              
+            <form [formGroup]="form" (ngSubmit)="save($event)" >              
               <!-- Mail  -->
               <div class="form-outline mb-4">
-                <input type="email" id="form3Example3" class="form-control" [formControl]="emailCtrl"/>
-                <label class="form-label" for="form3Example3">Igrese su dirección de mail</label><br>
-                <span *ngIf="emailCtrl.hasError('required') && emailCtrl.dirty" class="text-danger">Este campo es requerido</span>
+                    <!--Verificador ts-->              
+                    <div *ngIf="emailField.errors && emailField.touched">
+                      <small *ngIf="emailField.hasError('required')" class="text-danger">
+                        Es un campo requerido
+                      </small>
+                    </div>
+                    <!--entrada formulario-->                  
+                <input type="email" id="form3Example3" class="form-control" />
+                <label class="form-label" for="form3Example3">Igrese su dirección de mail</label><br>              
               </div>
 
               <!-- Contraseña  -->
               <div class="form-outline mb-4">
-                 
-                <input type="password" id="form3Example4" class="form-control" [formControl]="passCtrl" />
+                    <!--Verificador ts-->              
+                    <div *ngIf="passField.errors && passField.touched">
+                      <small *ngIf="passField.hasError('required')" class="text-danger">
+                        Es un campo requerido
+                      </small>
+                    </div>
+                    <!--entrada formulario-->                   
+                <input type="password" id="form3Example4" class="form-control"/>
                 <label class="form-label" for="form3Example4">Ingrese su contraseña</label><br>
-                <span *ngIf="passCtrl.hasError('required') && passCtrl.dirty" class="text-danger">Este campo es requerido</span>             
+               
               </div>
               <!-- Boton -->
-              <button [disabled]="checkPass()"  (click)="getEmail($event)" type="submit" class="btn btn-primary btn-block mb-4 ">
+              <button  type="submit" class="btn btn-primary btn-block mb-4 ">
                 Ingresar
               </button>
               <!-- Registrase  -->

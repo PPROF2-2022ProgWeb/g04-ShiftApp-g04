@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl,FormBuilder , FormGroup, Validators } from '@angular/forms';
-import { debounce, debounceTime } from 'rxjs';
+import { debounceTime } from 'rxjs';
 
 @Component({
   selector: 'app-registrarse',
@@ -11,7 +11,7 @@ export class RegistrarseComponent implements OnInit {
 
   form: FormGroup = new FormGroup({});
 
-  constructor() {
+  constructor(private formBuldier: FormBuilder) {
     this.buildForm();
   }
 
@@ -19,14 +19,14 @@ export class RegistrarseComponent implements OnInit {
   }
 
   private buildForm() {
-    this.form = new FormGroup({
-      name: new FormControl('', [Validators.required]),
-      lastname: new FormControl('', [Validators.required]),
-      date: new FormControl('', [Validators.required]),
-      email: new FormControl('', [Validators.email]), 
-      pass: new FormControl('', [Validators.required]),
-      country: new FormControl('', [Validators.required]),
-      province: new FormControl('', [Validators.required]),     
+    this.form = this.formBuldier.group({
+      name:  ['' , [Validators.required]],
+      lastname:  ['', [Validators.required]],
+      date:  ['', [Validators.required]],
+      email: ['', [Validators.required ,Validators.email]],
+      pass:  ['', [Validators.required]],
+      country:  ['', [Validators.required]],
+      province:  ['', [Validators.required]],     
     });
 
     this.form.valueChanges
@@ -38,9 +38,36 @@ export class RegistrarseComponent implements OnInit {
 
   save(event: Event) {
     event.preventDefault();
-    const value = this.form.value;
-    console.log(value);
+    if (this.form.valid) {
+      const value = this.form.value;
+      console.log(value);
+    } else {
+      this.form.markAllAsTouched();
+    }
   }
+
+  get mameField(){
+    return this.form.get('name'); 
+  }
+  get lastmameField(){
+    return this.form.get('lastname'); 
+  }
+  get dateField(){
+    return this.form.get('date'); 
+  }
+  get emailField(){
+    return this.form.get('email'); 
+  }
+  get passField(){
+    return this.form.get('pass'); 
+  }
+  get countryField(){
+    return this.form.get('country'); 
+  }
+  get provinceField(){
+    return this.form.get('province'); 
+  }
+
 
 }
  

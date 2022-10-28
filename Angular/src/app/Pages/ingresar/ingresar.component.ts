@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, ReactiveFormsModule, Validators } from '@angular/forms';
+import { FormControl, Validators, FormBuilder, FormGroup } from '@angular/forms';
 import { debounceTime } from 'rxjs';
 
 
@@ -10,33 +10,50 @@ import { debounceTime } from 'rxjs';
 })
 export class IngresarComponent implements OnInit {
 
-  emailCtrl = new FormControl('', [Validators.required ]);
-  passCtrl = new FormControl('' , [Validators.required]);
+  form: FormGroup = new FormGroup({});
 
-  constructor() {
-
-    this.emailCtrl.valueChanges.pipe(debounceTime(500)).subscribe(value => {console.log(value);});
-    this.passCtrl.valueChanges.pipe(debounceTime(500)).subscribe(value => {console.log(value);});
-
-   }
+  constructor(private formBuldier: FormBuilder) {
+    this.buildForm();
+  }
 
   ngOnInit() {
   }
 
-  getEmail(event: Event) {
+  private buildForm() {
+    this.form = this.formBuldier.group({
+
+      email: ['', [Validators.required ,Validators.email]],
+      pass:  ['', [Validators.required]],
+    
+    });
+
+    this.form.valueChanges
+    .pipe(debounceTime(500))
+    .subscribe(value => {
+      console.log(value);
+    });
+  }
+
+  save(event: Event) {
     event.preventDefault();
-    console.log(this.emailCtrl.value);
+    if (this.form.valid) {
+      const value = this.form.value;
+      console.log(value);
+    } else {
+      this.form.markAllAsTouched();
+    }
   }
 
-  getPass(event: Event){
-    event.preventDefault();
-    console.log(this.passCtrl.value);
+
+  get emailField(){
+    return this.form.get('email'); 
+  }
+  get passField(){
+    return this.form.get('pass'); 
   }
 
-  checkPass(): boolean{
-    let estado = !(this.emailCtrl.disabled && this.passCtrl.disabled);
-    console.log(estado);
-    return estado;
+
+
   }
 
-}
+

@@ -9,6 +9,8 @@
       }
     }
   </style>
+  
+  
   <!-- Formulario de ingresar -->
   <div class="container py-4">
     <div class="row g-0 align-items-center">
@@ -19,11 +21,20 @@
             ">
           <div class="card-body p-5 shadow-5 text-center">
             <h2 class="fw-bold mb-5">Crear Cuenta</h2>
-            <form [formGroup]="form" (ngSubmit)="save($event)">   
+
+            <!--formulario 1era linea -->
+            <form [formGroup]="form" novalidate (ngSubmit)="save($event)">   
               <div class="row mb-4">
                 <div class="col">
                   <!-- Nombre  -->
                   <div class="form-outline">
+                    <!--Verificador ts-->              
+                    <div *ngIf="mameField.errors && mameField.touched">
+                      <small *ngIf="mameField.hasError('required')" class="text-danger">
+                        Es un campo requerido
+                      </small>
+                    </div>
+                    <!--entrada formulario-->   
                     <input type="text" id="form3Example1" class="form-control" formControlName="name"/>
                     <label class="form-label" for="form6Example1">Igrese su Nombre</label>
                   </div>
@@ -31,6 +42,13 @@
                 <div class="col">
                   <!-- Apellido  -->
                   <div class="form-outline">
+                    <!--Verificador ts-->              
+                    <div *ngIf="lastmameField.errors && lastmameField.touched">
+                      <small *ngIf="lastmameField.hasError('required')" class="text-danger">
+                        Es un campo requerido
+                      </small>
+                    </div>
+                    <!--entrada formulario-->                      
                     <input type="text" id="form3Example2" class="form-control" formControlName="lastname" />
                     <label class="form-label" for="form6Example2">Igrese su Apellido</label>
                   </div>
@@ -38,16 +56,37 @@
               </div>
               <!-- Fecha  -->
               <div class="form-outline mb-4">
+                    <!--Verificador ts-->              
+                    <div *ngIf="dateField.errors && dateField.touched">
+                      <small *ngIf="dateField.hasError('required')" class="text-danger">
+                        Es un campo requerido
+                      </small>
+                    </div>
+                    <!--entrada formulario-->                  
                 <input type="date" id="form3Example3" class="form-control" formControlName="date" />
                 <label class="form-label" for="form3Example3">Igrese su Fecha de nacimiento</label>
               </div>
               <!-- Mail  -->
               <div class="form-outline mb-4">
+                    <!--Verificador ts-->              
+                    <div *ngIf="emailField.errors && emailField.touched">
+                      <small *ngIf="emailField.hasError('required')" class="text-danger">
+                        Es un campo requerido
+                      </small>
+                    </div>
+                    <!--entrada formulario-->                  
                 <input type="email" id="form3Example4" class="form-control" formControlName="email"/>
                 <label class="form-label" for="form3Example4">Igrese su dirección de mail</label>
               </div>
               <!-- Contraseña  -->
               <div class="form-outline mb-4">
+                    <!--Verificador ts-->              
+                    <div *ngIf="passField.errors && passField.touched">
+                      <small *ngIf="passField.hasError('required')" class="text-danger">
+                        Es un campo requerido
+                      </small>
+                    </div>
+                    <!--entrada formulario-->                  
                 <input type="password" id="form3Example5" class="form-control" formControlName="pass"/>
                 <label class="form-label" for="form3Example5">Ingrese su contraseña</label>
               </div>
@@ -55,6 +94,13 @@
                 <div class="col">
                   <!-- Pais  -->
                   <div class="form-outline">
+                    <!--Verificador ts-->              
+                    <div *ngIf="countryField.errors && countryField.touched">
+                      <small *ngIf="countryField.hasError('required')" class="text-danger">
+                        Es un campo requerido
+                      </small>
+                    </div>
+                    <!--entrada formulario-->                      
                     <input type="text" id="form3Example6" class="form-control" formControlName="country"/>
                     <label class="form-label" for="form6Example6">Igrese el país donde vive</label>
                   </div>
@@ -62,6 +108,13 @@
                 <div class="col">
                   <!-- Provincia  -->
                   <div class="form-outline">
+                    <!--Verificador ts-->              
+                    <div *ngIf="provinceField.errors && provinceField.touched">
+                      <small *ngIf="provinceField.hasError('required')" class="text-danger">
+                        Es un campo requerido
+                      </small>
+                    </div>
+                    <!--entrada formulario-->  
                     <input type="" id="form3Example7" class="form-control" formControlName="province" />
                     <label class="form-label" for="form6Example7">Igrese la provincia donde vive</label>
                   </div>
