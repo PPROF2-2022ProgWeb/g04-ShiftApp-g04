@@ -10,7 +10,6 @@ import { RegEmpresaComponent } from './Pages/reg-empresa/reg-empresa.component';
 import { TurneroComponent } from './Pages/turnero/turnero.component';
 import { PerfilComponent } from './Pages/perfil/perfil.component';
 
-
 const routes: Routes = [
  /*{path: "", component: AppComponent },*/
  {path:"inicio", component: InicioComponent},
@@ -20,7 +19,7 @@ const routes: Routes = [
  {path:"registrarse", component: RegistrarseComponent},
  {path:"reg-empresa", component: RegEmpresaComponent},
  {path:"turnero", component: TurneroComponent},
- {path:"perfil", component: PerfilComponent}
+ {path:"perfil", component: PerfilComponent},
 ];
 @NgModule({
   
