@@ -8,9 +8,10 @@ body{
      margin: auto;
      padding: 60px 0;
  }
+
  header{
     height: 80vh;
-    
+    background-image: linear-gradient(to top, rgba(46, 161, 161, 0.3) 0%, rgba(51, 8, 103, 0.3) 100%), url(../../../assets/holding-coffee.png);
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
@@ -23,17 +24,23 @@ body{
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    color: white;
+}
+.brand{
+    width: 120px;
+    height: 120px;
+}
+h1{
     
+    font-size: 100px;
+    margin-bottom: 15px;
 }
-.titulo{
-   font-size: 100px;
-   margin-bottom: 15px;
+#subtitulo{
+    font-weight: 300;
+    font-size: 25px;
 }
-.subtitulo{
-   font-weight: 300;
-   font-size: 25px;
-}
-p {
-    margin-top: 0;
-    margin-bottom: 1rem;
-  }
+
+ 
+  
+
+  

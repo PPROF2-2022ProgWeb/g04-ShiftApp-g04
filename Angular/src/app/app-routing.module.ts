@@ -9,7 +9,6 @@ import { RegistrarseComponent } from './Pages/registrarse/registrarse.component'
 import { TurneroComponent } from './Pages/turnero/turnero.component';
 import { PerfilComponent } from './Pages/perfil/perfil.component';
 
-
 const routes: Routes = [
  /*{path: "", component: AppComponent },*/
  {path:"inicio", component: InicioComponent},
@@ -18,7 +17,7 @@ const routes: Routes = [
  {path:"ingresar", component: IngresarComponent},
  {path:"registrarse", component: RegistrarseComponent},
  {path:"turnero", component: TurneroComponent},
- {path:"perfil", component: PerfilComponent}
+ {path:"perfil", component: PerfilComponent},
 ];
 @NgModule({
   
