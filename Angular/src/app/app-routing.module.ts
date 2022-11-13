@@ -9,6 +9,7 @@ import { RegistrarseComponent } from './Pages/registrarse/registrarse.component'
 import { RegEmpresaComponent } from './Pages/reg-empresa/reg-empresa.component';
 import { TurneroComponent } from './Pages/turnero/turnero.component';
 import { PerfilComponent } from './Pages/perfil/perfil.component';
+import { DashboardComponent} from "./Pages/dashboard/dashboard.component"
 
 const routes: Routes = [
  /*{path: "", component: AppComponent },*/
@@ -20,6 +21,7 @@ const routes: Routes = [
  {path:"reg-empresa", component: RegEmpresaComponent},
  {path:"turnero", component: TurneroComponent},
  {path:"perfil", component: PerfilComponent},
+ {path:"dashboard", component: DashboardComponent},
 ];
 @NgModule({
   
