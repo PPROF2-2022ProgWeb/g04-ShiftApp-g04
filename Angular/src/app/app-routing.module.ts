@@ -10,6 +10,7 @@ import { RegEmpresaComponent } from './Pages/reg-empresa/reg-empresa.component';
 import { TurneroComponent } from './Pages/turnero/turnero.component';
 import { PerfilComponent } from './Pages/perfil/perfil.component';
 import { FooterComponent} from './Layout/footer/footer.component';
+import { DashboardComponent} from "./Pages/dashboard/dashboard.component"
 
 const routes: Routes = [
  /*{path: "", component: AppComponent },*/
@@ -22,6 +23,7 @@ const routes: Routes = [
  {path:"turnero", component: TurneroComponent},
  {path:"perfil", component: PerfilComponent},
  {path:"footer", component: FooterComponent},
+ {path:"dashboard", component: DashboardComponent},
 ];
 @NgModule({
   
