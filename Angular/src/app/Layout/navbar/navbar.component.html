@@ -13,10 +13,10 @@
           <a class="nav-link " routerLinkActive="active" routerLink="/inicio">Inicio</a>
         </li>    
         <li class="nav-item">
-          <a class="nav-link " routerLinkActive="active" routerLink="/nosotros">Sobre nosotros</a>
+          <a class="nav-link " routerLinkActive="active" routerLink="/eCommerce">Tienda</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link " routerLinkActive="active" routerLink="/footer">Contacto</a>
+          <a class="nav-link " href="../footer/footer.component.html">Contacto</a>
         </li>
       </ul>
       <form class="navbar-nav ms-auto">
@@ -28,7 +28,30 @@
           <a class="nav-link " routerLinkActive="active" routerLink="/registrarse">Crear cuenta</a>
         </li> 
       </form>
+      <!-- ============================================================== -->
+      <!-- Right side toggle and nav items -->
+      <!-- ============================================================== -->
+      <ul class="navbar-nav float-end">
+      <!-- ============================================================== -->
+      <!-- User profile and search -->
+      <!-- ============================================================== -->
+      <li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark pro-pic" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+        <i><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgb(252, 251, 251);"><path d="M7.5 6.5C7.5 8.981 9.519 11 12 11s4.5-2.019 4.5-4.5S14.481 2 12 2 7.5 4.019 7.5 6.5zM20 21h1v-1c0-3.859-3.141-7-7-7h-4c-3.86 0-7 3.141-7 7v1h17z"></path></svg></i>
+      </a>
+      <ul class="dropdown-menu dropdown-menu-end user-dd animated" aria-labelledby="navbarDropdown">
+        <a class="dropdown-item" href="javascript:void(0)"><i class="ti-user m-r-5 m-l-5"></i>
+          Perfil</a>
+        <a class="dropdown-item" href="javascript:void(0)"><i class="ti-email m-r-5 m-l-5"></i>
+          Notificaciones</a>
+      </ul>
+      </li>
+      <!-- ============================================================== -->
+      <!-- User profile and search -->
+      <!-- ============================================================== -->
+      </ul>
     </div>
   </div>
 </nav>
 
+ 
