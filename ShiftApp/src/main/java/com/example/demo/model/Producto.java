@@ -7,11 +7,14 @@ import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 @Entity
 @Table(name = "productos")
 public class Producto {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@JsonBackReference
 	private Integer id;
 	private String nombre;
 	private String descripcion;
@@ -21,6 +24,7 @@ public class Producto {
 	
 	@ManyToOne
 	private Usuario usuario;
+	
 	
 	public Producto() {
 
