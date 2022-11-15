@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -19,6 +20,7 @@ import com.example.demo.respository.ProductoRepository;
 @RestController
 @RequestMapping("/api/v1")
 @CrossOrigin(origins = "http://localhost:4200/")
+
 public class AdministradorController {
 	
 	@Autowired
@@ -34,7 +36,7 @@ public class AdministradorController {
 	public Producto guardarProducto(@RequestBody Producto Producto) {
 		return repositorio.save(Producto);
 	}
-
+	
 //	@PutMapping("/Producto{id}")
 //	public ResponseEntity<Producto> actualizarProducto(@PathVariable int id, @RequestBody Producto detallesEmpleado) {
 //		

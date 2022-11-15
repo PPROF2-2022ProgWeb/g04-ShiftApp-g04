@@ -10,6 +10,8 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 @Entity
 @Table(name = "usuarios")
 public class Usuario {
@@ -31,6 +33,7 @@ public class Usuario {
 	private List<Producto> productos;
 	
 	@OneToMany(mappedBy = "usuario")
+	@JsonManagedReference
 	private List<Orden> ordenes;
 	
 	public Usuario() {
