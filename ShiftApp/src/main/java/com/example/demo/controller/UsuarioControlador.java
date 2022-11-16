@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.example.demo.model.Producto;
 import com.example.demo.model.Usuario;
-import com.example.demo.respository.UsuarioRepository;
+import com.example.demo.respository.IUsuarioRepository;
 
 @RestController
 @RequestMapping("/api/v1")
@@ -24,7 +24,7 @@ import com.example.demo.respository.UsuarioRepository;
 public class UsuarioControlador {
 	
 	@Autowired
-	private UsuarioRepository repositorioUsu;
+	private IUsuarioRepository repositorioUsu;
 	
 	//Listar todos los usuarios
 	@GetMapping("/Usuarios")
