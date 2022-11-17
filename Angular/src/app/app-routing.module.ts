@@ -11,9 +11,13 @@ import { TurneroComponent } from './Pages/turnero/turnero.component';
 import { PerfilComponent } from './Pages/perfil/perfil.component';
 import { FooterComponent} from './Layout/footer/footer.component';
 import { DashboardComponent} from "./Pages/dashboard/dashboard.component"
+/* componentes de php*/
+import { AgregarUsuarioComponent } from './Layout/agregar-usuario/agregar-usuario.component';
+import { EditarUsuarioComponent } from './Layout/editar-usuario/editar-usuario.component';
+import { ListadoClientesComponent } from './Layout/listado-clientes/listado-clientes.component';
 
 const routes: Routes = [
- /*{path: "", component: AppComponent },*/
+ {path: "", component: InicioComponent },
  {path:"inicio", component: InicioComponent},
  {path:"nosotros", component: NosotrosComponent},
  {path:"eCommerce", component: ECommerceComponent},
@@ -24,6 +28,10 @@ const routes: Routes = [
  {path:"perfil", component: PerfilComponent},
  {path:"footer", component: FooterComponent},
  {path:"dashboard", component: DashboardComponent},
+ {path:"agregar", component: AgregarUsuarioComponent},
+ {path:"editar", component: EditarUsuarioComponent},
+ {path:"listado", component: ListadoClientesComponent},
+
 ];
 @NgModule({
   
