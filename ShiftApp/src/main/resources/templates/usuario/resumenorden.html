@@ -48,9 +48,9 @@
               <h5 class="card-title">
                 DATOS ORDEN
               </h5>
-              <h6>Nombre: </h6>
-              <h6 >Correo: </h6>
-              <h6 >Dirección</h6>
+              <h6 th:text=" 'Nombre: '+ ${usuario.nombre}">: </h6>
+              <h6 th:text="'Correo: '+ ${usuario.email}">Correo: </h6>
+              <h6 th:text="'Direccion: '+ ${usuario.direccion}"></h6>
 
               <h5 class="card-title">
                 PRODUCTOS
@@ -86,7 +86,7 @@
 
           <ul class="list-group">
             <li class="list-group-item"><h5 th:text=" 'Total: '+ ${orden.total} "> </h5></li>
-            <a href="#" class="btn btn-dark">Generar</a>
+            <a th:href="@{saveOrder}" class="btn btn-dark">Generar</a>
           </ul>
         </div>
       </div>

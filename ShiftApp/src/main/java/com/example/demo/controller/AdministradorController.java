@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.demo.model.Producto;
-import com.example.demo.respository.ProductoRepository;
+import com.example.demo.respository.IProductoRepository;
 
 @RestController
 @RequestMapping("/api/v1")
@@ -24,7 +24,7 @@ import com.example.demo.respository.ProductoRepository;
 public class AdministradorController {
 	
 	@Autowired
-	private ProductoRepository repositorio;
+	private IProductoRepository repositorio;
 	//Listar todos los productos
 	@GetMapping("/Producto")
 	public List<Producto> listarTodosLosProductos(){
