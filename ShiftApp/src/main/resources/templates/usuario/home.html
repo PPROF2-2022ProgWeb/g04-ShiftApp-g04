@@ -6,6 +6,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
+  <meta name="author" content="">
 
   <title>Spring eCommerce</title>
 
@@ -21,14 +22,16 @@
 <body>
 
   <!-- Navigation -->
-<div th:include="administrador/template_admin.html::header"></div>
+<div th:include="usuario/template_usuario.html::header">
+
+</div>
 
     <!-- Page Content -->
     <div class="container">
 
       <!-- Jumbotron Header -->
       <header class="jumbotron my-4">
-        <h1 class="display-3">Bienvenido a ShiftpApp Ecommerce 2022</h1>
+        <h1 class="display-3">Bienvenido a Shift App 2022</h1>
         <p class="lead">Tu tienda de productos en Línea</p>
       </header>
 
@@ -42,18 +45,21 @@
               <p class="card-text" th:text="${producto.nombre}"></p>
             </div>
             <div class="card-footer">
-              <a href="productohome.html" class="btn btn-success">Ver producto</a>
+              <a th:href="@{/productohome/{id} (id=${producto.id})}" class="btn btn-success">Ver producto</a>
             </div>
           </div>
         </div>
 
+      </div>
       <!-- /.row -->
 
     </div>
     <!-- /.container -->
 
     <!-- Footer -->
-<div th:include="administrador/template_admin.html::footer"></div>
+<div th:include="usuario/template_usuario.html::footer">
+
+</div>
 
     <!-- Bootstrap core JavaScript -->
     <script th:src="@{vendor/jquery/jquery.min.js}"></script>
