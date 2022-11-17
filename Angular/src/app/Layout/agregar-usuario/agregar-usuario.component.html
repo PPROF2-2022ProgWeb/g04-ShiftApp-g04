@@ -1,0 +1,53 @@
+<div class="card">
+    <div class="card-header">
+        Aregar usuario
+    </div>  
+    <div class="card-body">
+        <form  (ngSubmit)="enviarData()">
+
+            <div class="row mb-4">
+                <div class="col">
+                    <label for="" class="form-label">Nombre</label>
+                    <input type="text"
+                        class="form-control" name="" id="nombre" aria-describedby="helpId" placeholder="Ingrese su nombre">
+                </div>
+                <div class="col">
+                    <label for="" class="form-label">Apellido</label>
+                    <input type="text"
+                        class="form-control" apellido="" id="apellido" aria-describedby="helpId" placeholder="Ingrese su apellido">
+                </div>
+            </div>
+            <div class="mb-4">
+                <label for="" class="form-label">Fecha</label>
+                <input type="date"
+                    class="form-control" fecha="" id="fecha" aria-describedby="helpId" placeholder="Fecha de nacimiento">
+            </div>
+            <div class="mb-4">
+                <label for="" class="form-label">Mail</label>
+                <input type="text" 
+                    class="form-control" mail="" id="mail" aria-describedby="helpId" placeholder="Dirección de e-mail">
+            </div>
+            <div class="mb-4">
+                <label for="" class="form-label">Contraseña</label>
+                <input type="passwords"
+                    class="form-control" contrasenia="" id="contrasenia" aria-describedby="helpId" placeholder="Ingrese su contraseña">
+            </div>
+            <div class="row mb-4">
+                <div class="col">
+                    <label for="" class="form-label">Provincia</label>
+                    <input type="text"
+                        class="form-control" provincia="" id="" aria-describedby="helpId" placeholder="Provincia">
+                </div>
+                <div class="col">
+                    <label for="" class="form-label">Pais</label>
+                    <input type="text"
+                        class="form-control" pais="" id="" aria-describedby="helpId" placeholder="Pais">
+                </div>
+            </div>
+            <div class="btn-group" role="group" aria-label="">
+                <button type="submit" class="btn btn-success" style="margin-right: 10px;" >Agregar</button>          
+                <button type="button" class="btn btn-primary">Cancelar</button>
+            </div>
+        </form>    
+    </div>    
+</div>
