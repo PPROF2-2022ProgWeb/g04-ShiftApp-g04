@@ -3,6 +3,8 @@ package com.example.demo.controller;
 import java.io.IOException;
 import java.util.Optional;
 
+import javax.servlet.http.HttpSession;
+
 import org.slf4j.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -16,6 +18,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import com.example.demo.model.Producto;
 import com.example.demo.model.Usuario;
+import com.example.demo.service.IUsuarioService;
 import com.example.demo.service.ProductoService;
 import com.example.demo.service.UploadFileService;
 
@@ -29,6 +32,8 @@ public class ProductoController {
 	@Autowired
 	private ProductoService productoService;
 	
+	@Autowired
+	private IUsuarioService usuarioService;
 	
 	@Autowired
 	private UploadFileService upload;
@@ -46,10 +51,14 @@ public class ProductoController {
 	}
 	
 	@PostMapping("/save")
-	public String save(Producto producto, @RequestParam("img") MultipartFile file) throws IOException {
+	public String save(Producto producto, @RequestParam("img") MultipartFile file, HttpSession session) throws IOException {
 		LOGGER.info("Este es el objeto producto {}", producto);
-		Usuario u = new Usuario(2, null, null, null, null, null, null, null, null, null, null, null, null);
+		
+		Usuario u = usuarioService.findById(Integer.parseInt(session.getAttribute("idusuario").toString() )).get();
+		//Usuario u = new Usuario(2, null, null, null, null, null, null, null, null, null, null, null, null);
 		producto.setUsuario(u);
+		
+		
 		
 		//imagen
 		if (producto.getId()==null) { // cuando se crea un producto
