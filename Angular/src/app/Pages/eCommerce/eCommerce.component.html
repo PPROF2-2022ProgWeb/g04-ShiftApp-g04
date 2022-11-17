@@ -1,3 +1,10 @@
+ 
+ <!-- Bootstrap core CSS -->
+ <link th:href="@{vendor/bootstrap/css/bootstrap.min.css}" rel="stylesheet">
+
+ <!-- Custom styles for this template -->
+ <link th:href="@{css/heroic-features.css}" rel="stylesheet">
+
  <!-- Navigation -->
  <div th:include="administrador/template_admin.html::header"></div>
 
@@ -6,8 +13,8 @@
 
    <!-- Jumbotron Header -->
    <header class="jumbotron my-4">
-     <h1 class="display-3">Bienvenido a ShiftpApp Ecommerce 2022</h1>
-     <p class="lead">Tu tienda de productos en Línea</p>
+     <h1 class="display-3">Bienvenido a nuestra tienda ShiftApp</h1>
+     <p class="lead">Selecciona la suscripción que mejor se ajuste a tus necesidades</p>
    </header>
 
    <!-- Page Features -->
@@ -17,10 +24,10 @@
        <div class="card h-100">
          <img class="card-img-top" src="http://placehold.it/500x325" alt="">
          <div class="card-body">
-           <p class="card-text">Nombre del producto.</p>
+           <p class="card-text">Suscripción Básica</p>
          </div>
          <div class="card-footer">
-           <a href="productohome.html" class="btn btn-success">Ver producto</a>
+           <a href="productohome.html" class="btn btn-success">Saber más</a>
          </div>
        </div>
      </div>
@@ -29,7 +36,7 @@
        <div class="card h-100">
          <img class="card-img-top" src="http://placehold.it/500x325" alt="">
          <div class="card-body">
-           <p class="card-text">Nombre del producto.</p>
+           <p class="card-text">Suscripción Básica</p>
          </div>
          <div class="card-footer">
            <a href="#" class="btn btn-success">Ver producto</a>
@@ -62,7 +69,11 @@
 
    </div>
    <!-- /.row -->
+   
 
  </div>
  <!-- /.container -->
+ <!-- Bootstrap core JavaScript -->
+ <script th:src="@{vendor/jquery/jquery.min.js}"></script>
+ <script th:src="@{vendor/bootstrap/js/bootstrap.bundle.min.js}"></script>
  
